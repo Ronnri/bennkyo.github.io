@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="ロンリー" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="隻言片語，雜亂成文。 「肺炎。」第一次住院。不是什麼大問題，勿念。大概是空氣問題以及換季忽冷忽熱等，久咳不癒引起的。多運動沒錯，卻忘了注意保護自己。入院體檢，量完體溫護士驚詫地問我：“你低燒這麼久了，你自己不知道嗎？”我搖頭，是從什麼時候開始的呢，對自己身體情況不再敏感？">
+<meta name="keywords" content="我們,研究生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="病中書">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;Ronnri&#x2F;2019&#x2F;03&#x2F;31&#x2F;bingzhongshu&#x2F;index.html">
+<meta property="og:site_name" content="ロンリー">
+<meta property="og:description" content="隻言片語，雜亂成文。 「肺炎。」第一次住院。不是什麼大問題，勿念。大概是空氣問題以及換季忽冷忽熱等，久咳不癒引起的。多運動沒錯，卻忘了注意保護自己。入院體檢，量完體溫護士驚詫地問我：“你低燒這麼久了，你自己不知道嗎？”我搖頭，是從什麼時候開始的呢，對自己身體情況不再敏感？">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;img&#x2F;bingzhongshu1.jpg">
+<meta property="og:updated_time" content="2019-11-07T16:22:24.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;github.com&#x2F;img&#x2F;bingzhongshu1.jpg">
+
+<link rel="canonical" href="https://github.com/Ronnri/2019/03/31/bingzhongshu/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>病中書 | ロンリー</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ロンリー</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">人生は己を探す旅である</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>歸檔</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2019/03/31/bingzhongshu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ronnri">
+      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ロンリー">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          病中書
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-31 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-31T00:00:00+08:00">2019-03-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
+                    <span itemprop="name">我們</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%88%91%E5%80%91/%E7%A0%94%E7%A9%B6%E7%94%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">研究生</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>隻言片語，雜亂成文。</p>
+<h3 id="「肺炎。」"><a href="#「肺炎。」" class="headerlink" title="「肺炎。」"></a>「肺炎。」</h3><p>第一次住院。不是什麼大問題，勿念。<br>大概是空氣問題以及換季忽冷忽熱等，久咳不癒引起的。多運動沒錯，卻忘了注意保護自己。<br>入院體檢，量完體溫護士驚詫地問我：“你低燒這麼久了，你自己不知道嗎？”我搖頭，是從什麼時候開始的呢，對自己身體情況不再敏感？</p>
+<a id="more"></a>
+<p>久病未癒，才知什麼都沒有身體康健可貴。</p>
+<p>住院输液第六天，針頭刺入靜脈的痛感開始降低。一點一滴，在這裡很安靜，時間被拉得很長很慢，終於可以靜下來思考，胡思亂想很多問題，關於去留，關於未來。</p>
+<h3 id="「遺憾？」"><a href="#「遺憾？」" class="headerlink" title="「遺憾？」"></a>「遺憾？」</h3><p>如果你的生命中止於此，你會有遺憾嗎？<br>未能盡孝。<br>走過看過二三十個城市，其中想留下來的地方只有兩個：重慶與中華台灣。兩岸政治問題，後者也就是只能想想罷了。去台灣時，好幾次跟朋友說:“我好想就黑在這了呀。”幾分玩笑幾分真情。而台灣的朋友笑我：“我們想去大陸發展，你卻想過來。不過都一樣，在哪邊都不容易。”做過幾個台灣的vlog，但由於種種問題不能上傳，後續也就放棄了。而重慶，之前也寫過關於<a href="https://ronnri.github.io/2017/04/09/Me&CQ" target="_blank" rel="noopener">我與重慶</a>。我很認真的考慮過，並且到現在也沒有放棄。<br>只是啊，這就意味著遠離家鄉。讓父母家人離開生活幾十年的地方他們必然不願意。兩地相距千里，遠水不救近火，遠親不如近鄰。父母親人注定是今生的羈絆，有些決定也該隨著他們。他們一天天老去，而我卻無能為力。每每此時，就會越發覺得自己窩囊。</p>
+<h3 id="「壓力大嗎？」"><a href="#「壓力大嗎？」" class="headerlink" title="「壓力大嗎？」"></a>「壓力大嗎？」</h3><p>聯繫了畢業後一些高薪的同學，而發現他們幾乎都有差不多的生活：壓力大，玩命。可這不是我想要的生活啊。朝九晚六，偶爾加班，相對高薪的職業似乎是不存在了。<br>週五開會，劉博問我是不是壓力大，我笑笑說我能有什麼壓力呀。的確，跟他們比起來我這點事都算不得什麼，庸人自擾之罷了。於我，能力有限，學術這條路可能走不通。<br>但誰又沒有壓力呢？久病不癒，科研沒進度，沒想法出不來論文，收入卑微，等等。</p>
+<h3 id="「你啷個還不耍朋友？」"><a href="#「你啷個還不耍朋友？」" class="headerlink" title="「你啷個還不耍朋友？」"></a>「你啷個還不耍朋友？」</h3><p>我拿啷個耍嘛。沒錢，沒時間，不會疼人。這樣的幾乎是愛情絕緣體了吧。關於愛情觀我之前也寫到過。大致就是，寧願單著，也不想隨便找個人湊合一生。我不是那種會一見鍾情的，但是呢，我的反射弧又有點長，等到回過頭，發現早就已經錯過了。朋友說的沒錯，我永遠是後知後覺的。<br>但還好，情愛對我來說好像不是必需品，能遇到最好，沒有也罷。匆匆幾十載，萬千體驗，少了一脈可能性而已。單身久了會上癮，一旦把結婚生子選項從人生規劃中剔除，會發現年齡已經無法對你形成任何束縛和恐懼，餘生都可以逐夢揚威。誰怕，一簑煙雨任平生。歸去，也無風雨也無晴。</p>
+<h3 id="「這兒，現在。」"><a href="#「這兒，現在。」" class="headerlink" title="「這兒，現在。」"></a>「這兒，現在。」</h3><p>這裡的人都很懂得保持距離，再也沒有無話不說的朋友，不會再有人陪你瘋為你扛，陪你熬夜科研競賽，沒有人會跟你在夜裡暴走幾十公里山路，沒有人能跟你一盤燒烤兩袋瓜子聊一宿，也沒有人在生病時不說一句就來看你:“傻逼，你也太菜了吧。”<br>…是啊，成人的世界不就是這樣嗎？ 你可能是早就習慣了在異鄉，但是卻沒有習慣孤獨。<br>我知道這些話寫出來會被覺得幼稚，但是我樂意呀。我也很慶幸這麼多年了我還是這麼一如既往的幼稚。</p>
+<!-- ![](/img/bingzhongshu1.jpg) -->
+<div align=center><img src="/img/bingzhongshu1.jpg" height="600"/></div>
+<!-- ![](/img/bingzhongshu2.jpg) -->
+<center>
+
+<h3 id="「生日快樂。」"><a href="#「生日快樂。」" class="headerlink" title="「生日快樂。」"></a>「生日快樂。」</h3><p>哦，對了，生日快樂。<br>2019.3.22 - 2019.3.31</p>
+</center>
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    捐贈
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Ronnri 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%88%91%E5%80%91/" rel="tag"># 我們</a>
+              <a href="/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/" rel="tag"># 研究生</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2018/06/07/cqjtu-end/" rel="next" title="或許我們不會再見。">
+                  <i class="fa fa-chevron-left"></i> 或許我們不會再見。
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQxNy8yMzkxNw=="></div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#「肺炎。」"><span class="nav-number">1.</span> <span class="nav-text">「肺炎。」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「遺憾？」"><span class="nav-number">2.</span> <span class="nav-text">「遺憾？」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「壓力大嗎？」"><span class="nav-number">3.</span> <span class="nav-text">「壓力大嗎？」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「你啷個還不耍朋友？」"><span class="nav-number">4.</span> <span class="nav-text">「你啷個還不耍朋友？」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「這兒，現在。」"><span class="nav-number">5.</span> <span class="nav-text">「這兒，現在。」</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#「生日快樂。」"><span class="nav-number">6.</span> <span class="nav-text">「生日快樂。」</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Ronnri"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Ronnri</p>
+  <div class="site-description" itemprop="description">如果某天你能看到這兒，真希望你能和我說些什麽。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分類</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">標籤</span>
+      </div>
+  </nav>
+</div>
+
+<!--
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div> -->
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ronnri" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;ronnri"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-handshake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ronnri</span>
+</div>
+<!-- 
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
+  </div> -->
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
