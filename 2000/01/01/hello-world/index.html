@@ -259,20 +259,6 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2000/01/01/hello-world/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2000/01/01/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 
         </div>
       </header>
@@ -339,12 +325,12 @@
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer &quot;歌曲名称&quot; &quot;作者&quot; &quot;音乐_url&quot; &quot;封面图片_url&quot; &quot;autoplay&quot; %&#125;</span><br></pre></td></tr></table></figure>
 
 
-        <div id="aplayer-PStJqlzL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-BfUsrtGB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-PStJqlzL"),
+            element: document.getElementById("aplayer-BfUsrtGB"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -414,7 +400,11 @@
 
           </div>
           
-    <div class="comments" id="comments"></div>
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQxNy8yMzkxNw=="></div>
+  </div>
+  
 
         </div>
           
@@ -671,31 +661,18 @@
 
   
 
-
 <script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz',
-    appKey: 'nsaw9e6DJuIGu11TAX5KM2vY',
-    placeholder: "Just go go",
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: '' || 'zh-cn',
-    path: location.pathname,
-    recordIP: false,
-    serverURLs: ''
-  });
-}, window.Valine);
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 </script>
 
 </body>
