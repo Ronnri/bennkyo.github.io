@@ -293,12 +293,12 @@
 <p>你們還在我身邊。</p>
 <p>@這個夏天一起瘋的朋友<br>@曾經哭過笑過恨過的同學<br>@親愛的家人</p>
 
-        <div id="aplayer-lMCgSEkd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-eACyDSfv" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-lMCgSEkd"),
+            element: document.getElementById("aplayer-eACyDSfv"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -507,11 +507,9 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
+              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
