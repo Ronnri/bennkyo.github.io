@@ -415,9 +415,14 @@
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -460,15 +465,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=mXENxgF8XbQTQu0szfmKpy1K-gzGzoHsz')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method: method,
           headers: {
-            'X-LC-Id': 'uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz',
-            'X-LC-Key': 'nsaw9e6DJuIGu11TAX5KM2vY',
+            'X-LC-Id': 'mXENxgF8XbQTQu0szfmKpy1K-gzGzoHsz',
+            'X-LC-Key': 'GEASzuVwzAUIIVUuiH4AiwrG',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -525,6 +530,32 @@
 
   
 
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz',
+    appKey: 'nsaw9e6DJuIGu11TAX5KM2vY',
+    placeholder: "説點什麽吧？",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

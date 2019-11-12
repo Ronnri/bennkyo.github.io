@@ -263,6 +263,20 @@
               <span class="post-meta-item-text">閱讀次數：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/03/31/bingzhongshu/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/bingzhongshu/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -346,11 +360,7 @@
 
           </div>
           
-    
-  <div class="comments" id="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzQxNy8yMzkxNw=="></div>
-  </div>
-  
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -497,9 +507,14 @@
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
           }
         })
         .catch(error => {
@@ -542,15 +557,15 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=mXENxgF8XbQTQu0szfmKpy1K-gzGzoHsz')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method: method,
           headers: {
-            'X-LC-Id': 'uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz',
-            'X-LC-Key': 'nsaw9e6DJuIGu11TAX5KM2vY',
+            'X-LC-Id': 'mXENxgF8XbQTQu0szfmKpy1K-gzGzoHsz',
+            'X-LC-Key': 'GEASzuVwzAUIIVUuiH4AiwrG',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data)
@@ -607,18 +622,31 @@
 
   
 
+
 <script>
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'uv1JQmOligLzEM4lnSTcaQwp-gzGzoHsz',
+    appKey: 'nsaw9e6DJuIGu11TAX5KM2vY',
+    placeholder: "説點什麽吧？",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
 </script>
 
 </body>
