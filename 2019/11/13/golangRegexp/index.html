@@ -70,30 +70,32 @@
   };
 </script>
 
-  <meta name="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ロンリー">
-<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;Ronnri&#x2F;index.html">
+  <meta name="description" content="OS: 正则好难啊。规则太多记不住，用到什么就去理解什么吧……  参考文献：基础知识 - Golang 中的正则表达式 一、常用匹配规则1.1. 单元   规则 说明    . 匹配任意一个字符   [字符类] 匹配“字符类”中的一个字符，“字符类”见后面的说明   [^字符类] 匹配“字符类”外的一个字符，“字符类”见后面的说明   \小写Perl标记 匹配“Perl类”中的一个字符，“Per">
+<meta name="keywords" content="reminder,Go,正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang中的正则表达式">
+<meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;Ronnri&#x2F;2019&#x2F;11&#x2F;13&#x2F;golangRegexp&#x2F;index.html">
 <meta property="og:site_name" content="ロンリー">
-<meta property="og:description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
+<meta property="og:description" content="OS: 正则好难啊。规则太多记不住，用到什么就去理解什么吧……  参考文献：基础知识 - Golang 中的正则表达式 一、常用匹配规则1.1. 单元   规则 说明    . 匹配任意一个字符   [字符类] 匹配“字符类”中的一个字符，“字符类”见后面的说明   [^字符类] 匹配“字符类”外的一个字符，“字符类”见后面的说明   \小写Perl标记 匹配“Perl类”中的一个字符，“Per">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-11-13T12:43:55.000Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/Ronnri/">
+<link rel="canonical" href="https://github.com/Ronnri/2019/11/13/golangRegexp/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>ロンリー</title>
+  <title>Golang中的正则表达式 | ロンリー</title>
   
 
 
@@ -204,10 +206,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2019/11/13/golangRegexp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,8 +223,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/13/golangRegexp/" class="post-title-link" itemprop="url">Golang中的正则表达式</a>
+          Golang中的正则表达式
         </h1>
 
         <div class="post-meta">
@@ -290,7 +291,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+        <blockquote>
 <p>OS: 正则好难啊。规则太多记不住，用到什么就去理解什么吧……</p>
 </blockquote>
 <p><strong>参考文献</strong>：<a href="https://www.cnblogs.com/williamjie/p/9686311.html" target="_blank" rel="noopener">基础知识 - Golang 中的正则表达式</a></p>
@@ -818,962 +819,51 @@
 <h4 id="其他一些实用的匹配规则"><a href="#其他一些实用的匹配规则" class="headerlink" title="其他一些实用的匹配规则"></a>其他一些实用的匹配规则</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	text := <span class="string">`Hello 世界！123 Go.`</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的小写字母</span></span><br><span class="line">	reg := regexp.MustCompile(<span class="string">`[a-z]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["ello" "o"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的非小写字母</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[^a-z]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["H" " 世界！123 G" "."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的单词字母</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\w]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello" "123" "Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的非单词字母、非空白字符</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[^\w\s]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["世界！" "."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的大写字母</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[[:upper:]]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["H" "G"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的非 ASCII 字符</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[[:^ascii:]]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["世界！"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的标点符号</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\pP]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["！" "."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的非标点符号字符</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\PP]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello 世界" "123 Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的汉字</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\p&#123;Han&#125;]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["世界"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续的非汉字字符</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\P&#123;Han&#125;]+`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello " "！123 Go."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找 Hello 或 Go</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`Hello|Go`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello" "Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找行首以 H 开头，以空格结尾的字符串</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`^H.*\s`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello 世界！123 "]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找行首以 H 开头，以空白结尾的字符串（非贪婪模式）</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(?U)^H.*\s`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello "]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找以 hello 开头（忽略大小写），以 Go 结尾的字符串</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(?i:^hello).*Go`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello 世界！123 Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找 Go.</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`\QGo.\E`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Go."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找从行首开始，以空格结尾的字符串（非贪婪模式）</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(?U)^.* `</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello "]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找以空格开头，到行尾结束，中间不包含空格字符串</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">` [^ ]*$`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// [" Go."]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找“单词边界”之间的字符串</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(?U)\b.+\b`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello" " 世界！" "123" " " "Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找连续 1 次到 4 次的非空格字符，并以 o 结尾的字符串</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[^ ]&#123;1,4&#125;o`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello" "Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查找 Hello 或 Go</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(?:Hell|G)o`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.FindAllString(text, <span class="number">-1</span>))</span><br><span class="line">	<span class="comment">// ["Hello" "Go"]</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 交换 Hello 和 Go</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`(Hello)(.*)(Go)`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.ReplaceAllString(text, <span class="string">"$3$2$1"</span>))</span><br><span class="line">	<span class="comment">// "Go 世界！123 Hello."</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 特殊字符的查找</span></span><br><span class="line">	reg = regexp.MustCompile(<span class="string">`[\f\t\n\r\v\123\x7F\x&#123;10FFFF&#125;\\\^\$\.\*\+\?\&#123;\&#125;\(\)\[\]\|]`</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%q\n"</span>, reg.ReplaceAllString(<span class="string">"\f\t\n\r\v\123\x7F\U0010FFFF\\^$.*+?&#123;&#125;()[]|"</span>, <span class="string">"-"</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+      
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    捐贈
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Ronnri 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/reminder/" rel="tag"># reminder</a>
+              <a href="/tags/Go/" rel="tag"># Go</a>
+              <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag"># 正则表达式</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2019/11/10/20191110/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/10/20191110/" class="post-title-link" itemprop="url">喜歡與厭惡是源於内心深處的。</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-11-10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-10T00:00:00+08:00">2019-11-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E7%A0%94%E7%A9%B6%E7%94%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">研究生</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/11/10/20191110/" class="post-meta-item leancloud_visitors" data-flag-title="喜歡與厭惡是源於内心深處的。" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/10/20191110/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/10/20191110/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>隨便擺一擺最近的感受，有點亂。</p>
-</blockquote>
-<p>post標題這句話是在微博上，起因很簡單。手頭接了一個微信小程序開發的項目，於是把時間大量傾斜到了coding上，而甚至懶得去打開、修改那篇rejected的論文。</p>
-<p>嗯，論文被reject了。意料之中，寫的時候就覺得，只是簡簡單單地拼凑了別人現有的成果，再稍稍修改了一些些。就這樣一篇論文，卻被投去了TII。回來的review comments 幾乎都在説新穎性不夠、原創性不足之類，卻還執意要去投TPE。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/10/20191110/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/10/20191110/" rel="next" title="喜歡與厭惡是源於内心深處的。">
+                  <i class="fa fa-chevron-left"></i> 喜歡與厭惡是源於内心深處的。
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+            <span class="post-nav-divider"></span>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2019/03/31/bingzhongshu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/03/31/bingzhongshu/" class="post-title-link" itemprop="url">病中書</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2019-03-31 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-31T00:00:00+08:00">2019-03-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E7%A0%94%E7%A9%B6%E7%94%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">研究生</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/03/31/bingzhongshu/" class="post-meta-item leancloud_visitors" data-flag-title="病中書" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/03/31/bingzhongshu/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/bingzhongshu/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>隻言片語，雜亂成文。</p>
-<h3 id="「肺炎。」"><a href="#「肺炎。」" class="headerlink" title="「肺炎。」"></a>「肺炎。」</h3><p>第一次住院。不是什麼大問題，勿念。<br>大概是空氣問題以及換季忽冷忽熱等，久咳不癒引起的。多運動沒錯，卻忘了注意保護自己。<br>入院體檢，量完體溫護士驚詫地問我：“你低燒這麼久了，你自己不知道嗎？”我搖頭，是從什麼時候開始的呢，對自己身體情況不再敏感？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/03/31/bingzhongshu/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
+            <div class="post-nav-prev post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2018/06/07/cqjtu-end/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/06/07/cqjtu-end/" class="post-title-link" itemprop="url">或許我們不會再見。</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2018-06-07 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-07T00:00:00+08:00">2018-06-07</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E5%A4%A7%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">大學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2018/06/07/cqjtu-end/" class="post-meta-item leancloud_visitors" data-flag-title="或許我們不會再見。" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/06/07/cqjtu-end/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/06/07/cqjtu-end/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="「ここにいないあなたへ」"><a href="#「ここにいないあなたへ」" class="headerlink" title="「ここにいないあなたへ」"></a><center>「ここにいないあなたへ」</center></h3><p>當唱起「突然好想你」的時候，竟也會心頭打顫。念起的並不是具體的某一個人，而是支離破碎的時光。歲月不饒人啊，狠狠地將時間從身體里抽離，卻無法與之抗拒。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/06/07/cqjtu-end/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2017/04/09/Me&CQ/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/04/09/Me&CQ/" class="post-title-link" itemprop="url">我與重慶</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2017-04-09 00:00:00" itemprop="dateCreated datePublished" datetime="2017-04-09T00:00:00+08:00">2017-04-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E5%A4%A7%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">大學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/04/09/Me&CQ/" class="post-meta-item leancloud_visitors" data-flag-title="我與重慶" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/04/09/Me&CQ/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/04/09/Me&CQ/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>我發現我是真的很喜歡重慶這座城市，但要我說及具體喜歡它哪一處，又無從說起。</p>
-</blockquote>
-<p>2014年夏天，也像許多人一樣，背上行囊背井離鄉來到這裡。那一年，滬渝高鐵剛剛通車，坐著車呆呆地看著窗外變化的景色，每一處變換都將家鄉甩得更遠，狠狠的。天黑時出發，天黑時到達，重慶。<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/04/09/Me&CQ/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2015/03/19/fengly/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/03/19/fengly/" class="post-title-link" itemprop="url">记得带着玫瑰 打上领带系上思念</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2015-03-19 00:00:00" itemprop="dateCreated datePublished" datetime="2015-03-19T00:00:00+08:00">2015-03-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">中學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2015/03/19/fengly/" class="post-meta-item leancloud_visitors" data-flag-title="记得带着玫瑰 打上领带系上思念" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2015/03/19/fengly/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2015/03/19/fengly/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>作者： <strong>fly</strong><br>fly是我中學時代結識的兄弟，本文源於生活，緬懷於生活。</p>
-</blockquote>
-<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>回忆是场冬末初春的雨，尽管还带有一丝凉意，但暖意早已抵挡不住。我不是文艺的创造者，只是心情的记录者。像是在海边拾贝壳的小孩，每一片记忆的贝壳都弥足珍贵。<br>当我还在为自己写了“我们曾前方百计想逃离的苦海，一定会成为脑海里最温暖的回忆”这句话沾沾自喜时，其实却已经有了回不去的过去，感悟总是赶不上经历的脚步，灵魂却在一直神游。<br>青春因为“我爱你”而绘声绘色，因为“做学霸”而激情澎湃，也因为“再见啦”变得回味无穷。敌不过岁月长河，却尝得到河水的五味杂陈。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/03/19/fengly/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2014/09/08/highschool-03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/09/08/highschool-03/" class="post-title-link" itemprop="url">明朝西行，何時東歸？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2014-09-08 00:00:00" itemprop="dateCreated datePublished" datetime="2014-09-08T00:00:00+08:00">2014-09-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">中學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/09/08/highschool-03/" class="post-meta-item leancloud_visitors" data-flag-title="明朝西行，何時東歸？" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2014/09/08/highschool-03/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2014/09/08/highschool-03/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>-<br>不知道該如何形容這個時節，<br>不曉得有沒有暮夏這個說法。<br>百匯廣場收留了我這個即將西行的旅人，<br>來自人海與車流的風在耳畔呢喃，<br>承認吧，你終究還是放不下。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/09/08/highschool-03/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2014/09/04/highschool-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/09/04/highschool-02/" class="post-title-link" itemprop="url">注定默默背上行囊，與你們背離。</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2014-09-04 00:00:00" itemprop="dateCreated datePublished" datetime="2014-09-04T00:00:00+08:00">2014-09-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">中學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/09/04/highschool-02/" class="post-meta-item leancloud_visitors" data-flag-title="注定默默背上行囊，與你們背離。" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2014/09/04/highschool-02/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2014/09/04/highschool-02/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>-<br>秋天過完回到夏天，<br>蔫了的梔子花重又盛開，收束成骨朵兒，<br>太陽從山的西邊升起，落向東方。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/09/04/highschool-02/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2014/08/08/qingdao-travel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/08/08/qingdao-travel/" class="post-title-link" itemprop="url">2014-QingDao</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2014-08-08 00:00:00" itemprop="dateCreated datePublished" datetime="2014-08-08T00:00:00+08:00">2014-08-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">中學</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/%E6%97%85%E8%A1%8C/" itemprop="url" rel="index">
-                    <span itemprop="name">旅行</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2014/08/08/qingdao-travel/" class="post-meta-item leancloud_visitors" data-flag-title="2014-QingDao" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2014/08/08/qingdao-travel/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2014/08/08/qingdao-travel/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>用斷句殘片記一記這次旅遊。趁著記憶還清晰。</p>
-</blockquote>
-<h2 id="8-3"><a href="#8-3" class="headerlink" title="8.3"></a>8.3</h2><p>中午吃完DZZ的飯，沒敢多喝酒。陪牛牛配完藥後，就急急忙忙的向火車站趕去，明知道時間還早，還是激動。在火車站睡了又醒醒了又睡，空調不給力，汗衫總是濕。後來坐著打牌，聽不到喧囂的人煙，傻樂著。加米的許多壽司味道各有味道。<br>晚上到虹橋。飛機改簽到22.55.然後又是各種傻等啊。 KFC坐著打牌打牌。魔都的晚上到底不一樣。飛機上坐著向外傻望著，明明知道看不見什麼的，可是看到機翼上的燈還是會莫名其妙的激動。飛行很順利，甚至都沒有遇到氣流。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/08/08/qingdao-travel/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Ronnri/2013/07/31/highschool-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ronnri">
-      <meta itemprop="description" content="如果某天你能看到這兒，真希望你能和我說些什麽。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ロンリー">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2013/07/31/highschool-01/" class="post-title-link" itemprop="url">終</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2013-07-31 00:00:00" itemprop="dateCreated datePublished" datetime="2013-07-31T00:00:00+08:00">2013-07-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/" itemprop="url" rel="index">
-                    <span itemprop="name">我們</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%88%91%E5%80%91/%E4%B8%AD%E5%AD%B8/" itemprop="url" rel="index">
-                    <span itemprop="name">中學</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2013/07/31/highschool-01/" class="post-meta-item leancloud_visitors" data-flag-title="終" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2013/07/31/highschool-01/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2013/07/31/highschool-01/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="〔一〕"><a href="#〔一〕" class="headerlink" title="〔一〕"></a>〔一〕</h2><p>我鎖車的一剎那84馳去<br>咬著嘴唇暗暗生恨<br>靠窗倚下 半邊火辣半邊陰沉<br>雪茄 西裝 高跟鞋 黑絲 市儈<br>塞上耳機 撇眼窗外<br>712 謝謝你的收留。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/07/31/highschool-01/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -1781,15 +871,10 @@
 
   </div>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
-
-
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -1814,6 +899,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、常用匹配规则"><span class="nav-number">1.</span> <span class="nav-text">一、常用匹配规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-单元"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 单元</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-组合"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 组合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-重复"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. 重复</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、分组与标记"><span class="nav-number">2.</span> <span class="nav-text">二、分组与标记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-分组基本规则"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 分组基本规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-标记"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-可设置的标记"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. 可设置的标记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-位置标记"><span class="nav-number">2.4.</span> <span class="nav-text">2.4. 位置标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、转义序列"><span class="nav-number">3.</span> <span class="nav-text">三、转义序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">3.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、“命名字符类”作为“字符类”"><span class="nav-number">4.</span> <span class="nav-text">四、“命名字符类”作为“字符类”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、字符类取值说明"><span class="nav-number">5.</span> <span class="nav-text">五、字符类取值说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-Perl类"><span class="nav-number">5.1.</span> <span class="nav-text">5.1. Perl类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-ASCII类"><span class="nav-number">5.2.</span> <span class="nav-text">5.2. ASCII类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-Unicode类"><span class="nav-number">5.3.</span> <span class="nav-text">5.3. Unicode类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、Golang-表述"><span class="nav-number">6.</span> <span class="nav-text">六、Golang 表述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#邮箱的匹配规则"><span class="nav-number">6.1.</span> <span class="nav-text">邮箱的匹配规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手机号的匹配规则"><span class="nav-number">6.2.</span> <span class="nav-text">手机号的匹配规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他一些实用的匹配规则"><span class="nav-number">6.3.</span> <span class="nav-text">其他一些实用的匹配规则</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
